@@ -23,10 +23,10 @@ public class BinaryArray {
 
 
     }
-
+    // сам метод
     public static void findNumber(int[] array, int number){
-            int l = 0;
-            int r = array.length - 1;
+            int l = 0;                                          //левый индекс
+            int r = array.length - 1;                           //правый индекс
             while (l <= r) {
                 int mid = l + (r - l) / 2;
 
@@ -40,7 +40,7 @@ public class BinaryArray {
         }
 
 
-
+    //ввод числа
     public static int enterNumber() throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         String enterSize = String.valueOf(reader.readLine());
@@ -50,7 +50,7 @@ public class BinaryArray {
         }
         return parseInt(enterSize);
     }
-
+    //проверка
     public static boolean isDigit(String s) throws NumberFormatException {
         try {
             parseInt(s);
@@ -59,7 +59,7 @@ public class BinaryArray {
             return false;
         }
     }
-
+    //вывод массива
     public static void printArray (int[] array){
         for (int i = 0; i < array.length; i++) {
                 System.out.print(array[i] + " ");
