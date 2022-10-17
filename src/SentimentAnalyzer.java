@@ -66,12 +66,12 @@ public class SentimentAnalyzer {
         if(isStrInReview(review, pattern)) {
             for(String strPos : posOpinionWords){
                 if (isStrInReview(review, (pattern + strPos))) {
-                    return opinion++;
+                    opinion++;
                 }
             }
             for (String strNeg : negOpinionWords) {
                 if (isStrInReview(review, (pattern + strNeg))) {
-                    return opinion--;
+                    opinion--;
                 }
             }
         }
