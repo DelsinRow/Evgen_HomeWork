@@ -8,7 +8,8 @@ public class SentimentAnalyzer {
 
     public static void main(String[] args) {
         String review = "Haven't been here in years! Fantastic service and the food was delicious! Definetly will be a frequent flyer! Francisco was very attentive";
-        String review2 = "Sorry OG, but you just lost some loyal customers. Horrible service, no smile or greeting just attitude. The breadsticks were stale and burnt, appetizer was cold and the food came out before the salad.";
+        review = review.toLowerCase();
+        //String review2 = "Sorry OG, but you just lost some loyal customers. Horrible service, no smile or greeting just attitude. The breadsticks were stale and burnt, appetizer was cold and the food came out before the salad.";
 
         String[][] featureSet = {
                 { "ambiance", "ambience", "atmosphere", "decor" },
@@ -29,14 +30,18 @@ public class SentimentAnalyzer {
         int[] featureOpinions = new int[featureSet.length];
         String feature;     //объявить здесь или в цикле?
 
-        for(int k = 0; k < featureOpinions.length; k++) {
+  //      for(int k = 0; k < featureOpinions.length; k++) {
             for (int i = 0; i < featureSet.length; i++) {
                 for (int j = 0; j < featureSet[i].length; j++) {
                     feature = featureSet[i][j];
-                    featureOpinions[k] = getOpinionOnFeature(review, feature, posOpinionWords, negOpinionWords);
+                    featureOpinions[i] = getOpinionOnFeature(review, feature, posOpinionWords, negOpinionWords);
+                    if(featureOpinions[i] != 0) {
+                        break;
+                    }
+
                 }
             }
-        }
+   //     }
         return featureOpinions;
     }
 
@@ -49,46 +54,52 @@ public class SentimentAnalyzer {
        return result;
     }
 
-    private static boolean isStrInReview(String review, String str){
-        int index = review.indexOf(str);
-        String newStr = review.substring(index);
-        boolean strBoolean = review.startsWith(newStr, index);
-        if(strBoolean){
-            return true;
-        } else {
-            return false;
-        }
-    }
     private static int checkForWasPhrasePattern(String review, String feature, String[] posOpinionWords, String[] negOpinionWords) {
         int opinion = 0;
         String pattern = feature + " was ";
 
-        if(isStrInReview(review, pattern)) {
+        if(review.contains(pattern)) {
             for(String strPos : posOpinionWords){
-                if (isStrInReview(review, (pattern + strPos))) {
+                if (review.contains(pattern + strPos)) {
                     opinion++;
+                    System.out.println("opinion1: " + opinion);
                 }
             }
             for (String strNeg : negOpinionWords) {
-                if (isStrInReview(review, (pattern + strNeg))) {
+                if (review.contains(pattern + strNeg)) {
                     opinion--;
+                    System.out.println("opinion2: " + opinion);
                 }
             }
+
         }
+        System.out.println("opinion: " + opinion);
         return opinion;
     }
 
 
     private static int checkForOpinionFirstPattern(String review, String feature, String[] posOpinionWords, String[] negOpinionWords) {
-        // Extract sentences as feature might appear multiple times.
-        // split() takes a regular expression and "." is a special character
-        // for regular expression. So, escape it to make it work!!
-        String[] sentences = review.split("\\.");
+
+        //String[] sentences = review.split("\\.");
         int opinion = 0;
+        String pattern = " " + feature;
 
-        // your code for processing each sentence. You can return if opinion is found in a sentence (no need to process subsequent ones)
-
+        if(review.contains(pattern)) {
+            for(String strPos : posOpinionWords){
+                if (review.contains(strPos + pattern)) {
+                    opinion++;
+                    break;
+                }
+            }
+            for (String strNeg : negOpinionWords) {
+                if (review.contains(strNeg + pattern)) {
+                    opinion--;
+                    break;
+                }
+            }
+        }
         return opinion;
+
     }
 
 
