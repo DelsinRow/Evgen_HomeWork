@@ -62,18 +62,18 @@ public class SentimentAnalyzer {
             for(String strPos : posOpinionWords){
                 if (review.contains(pattern + strPos)) {
                     opinion++;
-                    System.out.println("opinion1: " + opinion);
+
                 }
             }
             for (String strNeg : negOpinionWords) {
                 if (review.contains(pattern + strNeg)) {
                     opinion--;
-                    System.out.println("opinion2: " + opinion);
+
                 }
             }
 
         }
-        System.out.println("opinion: " + opinion);
+
         return opinion;
     }
 
