@@ -1,9 +1,11 @@
 package Coding_Exercise_6.Coding_Exercise_7;
 
-public class HealthInsurancePlan {
+public abstract class HealthInsurancePlan {
     private double coverage;
     private double discount;
     private InsuranceBrand offeredBy;
+
+    public abstract double computeMonthlyPremium(double salary);
 
     public InsuranceBrand getOfferedBy() {
         return offeredBy;
@@ -26,6 +28,13 @@ public class HealthInsurancePlan {
     }
 
     public void setDiscount(double discount) {
+        this.discount = discount;
+    }
+
+    public HealthInsurancePlan () {}
+
+    public HealthInsurancePlan(double coverage, int discount){
+        this.coverage = coverage;
         this.discount = discount;
     }
 }

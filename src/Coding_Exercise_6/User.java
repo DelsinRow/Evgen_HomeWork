@@ -1,11 +1,30 @@
 package Coding_Exercise_6;
 
-public class User {
+import Coding_Exercise_6.Coding_Exercise_7.HealthInsurancePlan;
+
+public abstract class User {
 
     private long id;
     private String firstName;
     private String lastName;
     private String gender;
+    private String email;
+    private boolean insured;
+
+    private HealthInsurancePlan insurancePlan = new HealthInsurancePlan() {
+        @Override
+        public double computeMonthlyPremium(double salary) {
+            return 0;
+        }
+    };
+
+    public HealthInsurancePlan getInsurancePlan() {
+        return insurancePlan;
+    }
+
+    public void setInsurancePlan(HealthInsurancePlan insurancePlan) {
+        this.insurancePlan = insurancePlan;
+    }
 
     public String getFirstName() {
         return firstName;
@@ -39,14 +58,22 @@ public class User {
         this.email = email;
     }
 
-    private String email;
+    public boolean isInsured() {
+        return insured;
+    }
+
+    public void setInsured(boolean insured) {
+        this.insured = insured;
+    }
 
     public long getId() {
         return id;
     }
+
     public void setId(long id) {
         this.id = id;
     }
+
 
 }
 
