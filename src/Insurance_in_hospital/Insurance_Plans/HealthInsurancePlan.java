@@ -1,6 +1,6 @@
 package Insurance_in_hospital.Insurance_Plans;
 
-import Insurance_in_hospital.Insuranse_Brands.InsuranceBrand;
+import Insurance_in_hospital.Insurance_Brands.InsuranceBrand;
 
 public abstract class HealthInsurancePlan {
     private double coverage;

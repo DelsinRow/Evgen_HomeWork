@@ -2,8 +2,8 @@ package Insurance_in_hospital.Users;
 
 import Insurance_in_hospital.Insurance_Plans.HealthInsurancePlan;
 import Insurance_in_hospital.Insurance_Plans.PlatinumPlan;
-import Insurance_in_hospital.Insuranse_Brands.BlueCrossBlueShield;
-import Insurance_in_hospital.Insuranse_Brands.InsuranceBrand;
+import Insurance_in_hospital.Insurance_Brands.BlueCrossBlueShield;
+import Insurance_in_hospital.Insurance_Brands.InsuranceBrand;
 
 public class Staff extends User {
     private long staffId;

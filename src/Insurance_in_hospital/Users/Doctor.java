@@ -1,7 +1,7 @@
 package Insurance_in_hospital.Users;
 
 import Insurance_in_hospital.Insurance_Plans.HealthInsurancePlan;
-import Insurance_in_hospital.Insuranse_Brands.InsuranceBrand;
+import Insurance_in_hospital.Insurance_Brands.InsuranceBrand;
 
 public class Doctor extends Staff {
     private long doctorId;

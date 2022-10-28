@@ -1,4 +1,4 @@
-package Insurance_in_hospital.Insuranse_Brands;
+package Insurance_in_hospital.Insurance_Brands;
 
 import Insurance_in_hospital.Insurance_Plans.*;
 
