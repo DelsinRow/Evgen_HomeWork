@@ -1,22 +1,37 @@
-package Coding_Exercise_6;
+package Insurance_in_hospital.Users;
 
-import Coding_Exercise_6.Coding_Exercise_7.HealthInsurancePlan;
+import Insurance_in_hospital.Insurance_Plans.HealthInsurancePlan;
+import Insurance_in_hospital.Insuranse_Brands.InsuranceBrand;
 
 public abstract class User {
 
     private long id;
+    private int age;
     private String firstName;
     private String lastName;
     private String gender;
     private String email;
+    private boolean smoking;
     private boolean insured;
 
-    private HealthInsurancePlan insurancePlan = new HealthInsurancePlan() {
-        @Override
-        public double computeMonthlyPremium(double salary) {
-            return 0;
-        }
-    };
+    private HealthInsurancePlan insurancePlan;
+    private InsuranceBrand insuranceBrand;
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public boolean isSmoking() {
+        return smoking;
+    }
+
+    public void setSmoking(boolean smoking) {
+        this.smoking = smoking;
+    }
 
     public HealthInsurancePlan getInsurancePlan() {
         return insurancePlan;
@@ -24,6 +39,14 @@ public abstract class User {
 
     public void setInsurancePlan(HealthInsurancePlan insurancePlan) {
         this.insurancePlan = insurancePlan;
+    }
+
+    public InsuranceBrand getInsuranceBrand() {
+        return insuranceBrand;
+    }
+
+    public void setInsuranceBrand(InsuranceBrand insuranceBrand) {
+        this.insuranceBrand = insuranceBrand;
     }
 
     public String getFirstName() {

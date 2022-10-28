@@ -1,6 +1,7 @@
-package Coding_Exercise_6;
+package Insurance_in_hospital.Users;
 
-import Coding_Exercise_6.Coding_Exercise_7.HealthInsurancePlan;
+import Insurance_in_hospital.Insurance_Plans.HealthInsurancePlan;
+import Insurance_in_hospital.Insuranse_Brands.InsuranceBrand;
 
 public class Doctor extends Staff {
     private long doctorId;
@@ -22,7 +23,7 @@ public class Doctor extends Staff {
         this.specialization = specialization;
     }
 
-    public Doctor(long doctorId, HealthInsurancePlan insurancePlan, double salary) {
-        super(doctorId, insurancePlan, salary);
+    public Doctor(long doctorId, InsuranceBrand insuranceBrand, HealthInsurancePlan insurancePlan, double salary) {
+        super(doctorId, insuranceBrand, insurancePlan, salary);
     }
 }

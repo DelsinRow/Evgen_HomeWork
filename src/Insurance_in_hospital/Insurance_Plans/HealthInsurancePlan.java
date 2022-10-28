@@ -1,11 +1,13 @@
-package Coding_Exercise_6.Coding_Exercise_7;
+package Insurance_in_hospital.Insurance_Plans;
+
+import Insurance_in_hospital.Insuranse_Brands.InsuranceBrand;
 
 public abstract class HealthInsurancePlan {
     private double coverage;
     private double discount;
     private InsuranceBrand offeredBy;
 
-    public abstract double computeMonthlyPremium(double salary);
+    public abstract double computeMonthlyPremium (double salary, int age, boolean smoking);
 
     public InsuranceBrand getOfferedBy() {
         return offeredBy;

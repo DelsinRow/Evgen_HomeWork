@@ -1,8 +1,9 @@
-package Coding_Exercise_6;
+package Insurance_in_hospital.Users;
 
-import Coding_Exercise_6.Coding_Exercise_7.BronzePlan;
-import Coding_Exercise_6.Coding_Exercise_7.HealthInsurancePlan;
-import Coding_Exercise_6.Coding_Exercise_7.PlatinumPlan;
+import Insurance_in_hospital.Insurance_Plans.HealthInsurancePlan;
+import Insurance_in_hospital.Insurance_Plans.PlatinumPlan;
+import Insurance_in_hospital.Insuranse_Brands.BlueCrossBlueShield;
+import Insurance_in_hospital.Insuranse_Brands.InsuranceBrand;
 
 public class Staff extends User {
     private long staffId;
@@ -10,10 +11,15 @@ public class Staff extends User {
     private String description;
     private double salary;
 
+    //Checking
     public static void main(String[] args) {
         HealthInsurancePlan insurancePlan = new PlatinumPlan();
-        Staff nurse = new Nurse(1, insurancePlan, 1000);
-        System.out.println("Nurse's premium: " + insurancePlan.computeMonthlyPremium(nurse.salary));
+        InsuranceBrand insuranceBrand = new BlueCrossBlueShield();
+        Staff nurse = new Nurse(1, insuranceBrand, insurancePlan, 1000);
+        nurse.setInsurancePlan(insurancePlan);
+        insurancePlan.setOfferedBy(insuranceBrand);
+
+        System.out.println("Nurse's premium: " + insurancePlan.computeMonthlyPremium(nurse.salary, 22, true));
     }
 
 
@@ -50,8 +56,9 @@ public class Staff extends User {
         this.salary = salary;
     }
 
-    public Staff (long id, HealthInsurancePlan insurancePlan, double salary) {
+    public Staff (long id, InsuranceBrand insuranceBrand, HealthInsurancePlan insurancePlan, double salary) {
         this.staffId = id;
+        this.setInsuranceBrand(insuranceBrand);
         this.setInsurancePlan(insurancePlan);
         this.salary = salary;
     }

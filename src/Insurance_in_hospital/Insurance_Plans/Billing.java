@@ -1,6 +1,6 @@
-package Coding_Exercise_6.Coding_Exercise_7;
+package Insurance_in_hospital.Insurance_Plans;
 
-import Coding_Exercise_6.Patient;
+import Insurance_in_hospital.Users.Patient;
 
 public class Billing {
 
