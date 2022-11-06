@@ -1,9 +1,4 @@
-package Insurance_in_hospital.Users;
-
-
-import Insurance_in_hospital.Insurance_Plans.HealthInsurancePlan;
-import Insurance_in_hospital.Insurance_Plans.PlatinumPlan;
-import Insurance_in_hospital.Insurance_Plans.Billing;
+package insurance_in_hospital.users;
 
 
 public class Patient extends User {

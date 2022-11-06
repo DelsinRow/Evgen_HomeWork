@@ -1,11 +1,16 @@
-package Insurance_in_hospital.Insurance_Brands;
+package insurance_in_hospital.insurance_brands;
 
-import Insurance_in_hospital.Insurance_Plans.*;
+import insurance_in_hospital.insurance_plans.GoldPlan;
+import insurance_in_hospital.insurance_plans.PlatinumPlan;
+import insurance_in_hospital.insurance_plans.SilverPlan;
+import insurance_in_hospital.insurance_plans.BronzePlan;
+import insurance_in_hospital.insurance_plans.HealthInsurancePlan;
 
 
 public class BlueCrossBlueShield implements InsuranceBrand{
     private int id;
     private String name;
+    final static int OLD_AGE = 55;
 
     final static int OLD_PLATINUM_PREMIUM = 200;
     final static int OLD_GOLD_PREMIUM = 150;
@@ -42,34 +47,25 @@ public class BlueCrossBlueShield implements InsuranceBrand{
         if(smoking){
             if (insurancePlan instanceof PlatinumPlan){
                 smokingPremium = SMOKING_PLATINUM_PREMIUM;
-            }
-            if (insurancePlan instanceof GoldPlan){
+            } else if (insurancePlan instanceof GoldPlan){
                 smokingPremium = SMOKING_GOLD_PREMIUM;
-            }
-            if (insurancePlan instanceof SilverPlan){
+            } else if (insurancePlan instanceof SilverPlan){
                 smokingPremium = SMOKING_SILVER_PREMIUM;
-            }
-            if (insurancePlan instanceof BronzePlan){
+            } else if (insurancePlan instanceof BronzePlan){
                 smokingPremium = SMOKING_BRONZE_PREMIUM;
             }
         }
-        if(age > 55){
+        if(age > OLD_AGE){
             if (insurancePlan instanceof PlatinumPlan){
-                smokingPremium = OLD_PLATINUM_PREMIUM;
-            }
-            if (insurancePlan instanceof GoldPlan){
-                smokingPremium = OLD_GOLD_PREMIUM;
-            }
-            if (insurancePlan instanceof SilverPlan){
-                smokingPremium = OLD_SILVER_PREMIUM;
-            }
-            if (insurancePlan instanceof BronzePlan){
-                smokingPremium = OLD_BRONZE_PREMIUM;
+                agePremium = OLD_PLATINUM_PREMIUM;
+            } else if (insurancePlan instanceof GoldPlan){
+                agePremium = OLD_GOLD_PREMIUM;
+            } else if (insurancePlan instanceof SilverPlan){
+                agePremium = OLD_SILVER_PREMIUM;
+            } else if (insurancePlan instanceof BronzePlan){
+                agePremium = OLD_BRONZE_PREMIUM;
             }
         }
-
         return smokingPremium + agePremium;
     }
-
-
 }

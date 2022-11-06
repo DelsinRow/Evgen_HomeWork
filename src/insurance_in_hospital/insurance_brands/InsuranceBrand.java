@@ -1,6 +1,6 @@
-package Insurance_in_hospital.Insurance_Brands;
+package insurance_in_hospital.insurance_brands;
 
-import Insurance_in_hospital.Insurance_Plans.HealthInsurancePlan;
+import insurance_in_hospital.insurance_plans.HealthInsurancePlan;
 
 public interface InsuranceBrand {
 

@@ -1,6 +1,6 @@
-package Insurance_in_hospital.Insurance_Plans;
+package insurance_in_hospital.insurance_plans;
 
-import Insurance_in_hospital.Users.Patient;
+import insurance_in_hospital.users.Patient;
 
 public class Billing {
 
