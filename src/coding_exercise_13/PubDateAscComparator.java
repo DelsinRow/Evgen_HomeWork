@@ -10,11 +10,9 @@ public class PubDateAscComparator implements Comparator<Book> {
             return 1;
         } else if (o1.getYear() < o2.getYear()){
             return -1;
-        }  else if (o1.getYear()  == o2.getYear()) {
+        }  else {
             return o1.getTitle().compareTo(o2.getTitle());
-        } else {
-            return 0;
+            }
         }
-    }
 }
 

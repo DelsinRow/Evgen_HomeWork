@@ -10,10 +10,8 @@ public class PubDateDescComparator implements Comparator<Book> {
             return 1;
         } else if (o2.getYear() < o1.getYear()){
             return -1;
-        }  else if (o2.getYear()  == o1.getYear()) {
+        }  else {
             return o2.getTitle().compareTo(o1.getTitle());
-        } else {
-            return 0;
         }
     }
 }
