@@ -63,4 +63,8 @@ public class Passenger {
         return true;
     }
 
+    @Override
+    public String toString() {
+        return  "\n" + "(" + firstName + " " + lastName + ", ticket " + confirmationNumber + ")";
+    }
 }
