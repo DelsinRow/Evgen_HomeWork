@@ -11,7 +11,7 @@ public class PubDateAscComparator implements Comparator<Book> {
         } else if (o1.getYear() < o2.getYear()){
             return -1;
         }  else {
-            return o1.getTitle().compareTo(o2.getTitle());
+            return o1.compareTo(o2);
             }
         }
 }
