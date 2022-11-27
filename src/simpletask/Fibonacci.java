@@ -1,3 +1,5 @@
+package simpletask;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -9,11 +11,11 @@ public class Fibonacci {
         int userStep;
 
         System.out.println();
-        System.out.print("First ten numbers of Fibonacci: ");
+        System.out.print("First ten numbers of simpletask.Fibonacci: ");
         printNumberOfFibonacci(10);
 
         System.out.println();
-        System.out.print("Please enter Fibonacci's number: ");
+        System.out.print("Please enter simpletask.Fibonacci's number: ");
         userStep = inputFibonacciNumber() - 1;
         System.out.println(findFibonacciNumber(userStep));
 

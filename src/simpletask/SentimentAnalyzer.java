@@ -1,4 +1,4 @@
-/**
+package simpletask; /**
  * No implement checkForOpinionFirstPattern method
  */
 

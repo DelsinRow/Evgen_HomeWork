@@ -1,4 +1,4 @@
-package socket_connection_byDenis;
+package socket_connection.socket_connection_byDenis;
 
 import java.io.DataInputStream;
 import java.io.IOException;

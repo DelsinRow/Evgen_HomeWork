@@ -11,7 +11,7 @@ public class PubDateDescComparator implements Comparator<Book> {
         } else if (o2.getYear() < o1.getYear()){
             return -1;
         }  else {
-            return o2.compareTo(o1);
+            return o1.compareTo(o2);
         }
     }
 }

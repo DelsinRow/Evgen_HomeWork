@@ -1,4 +1,4 @@
-/**
+package simpletask; /**
  * Без рекурсии
  */
 

@@ -1,3 +1,5 @@
+package simpletask;
+
 import java.util.Scanner;
 public class Assignment4 {
 
