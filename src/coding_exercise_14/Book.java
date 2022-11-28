@@ -100,20 +100,20 @@ public class Book implements Comparable {
         }
     }
 
-        public static class PubDateComparators {
+    public static class PubDateComparators {
 
-            public static class PubDateAscComparator implements Comparator<Book> {
+        public static class PubDateAscComparator implements Comparator<Book> {
 
-                @Override
-                public int compare(Book o1, Book o2) {
-                    if (o1.getYear() > o2.getYear()) {
-                        return 1;
-                    } else if (o1.getYear() < o2.getYear()) {
-                        return -1;
-                    } else {
-                        return o1.compareTo(o2);
-                    }
+            @Override
+            public int compare(Book o1, Book o2) {
+                if (o1.getYear() > o2.getYear()) {
+                    return 1;
+                } else if (o1.getYear() < o2.getYear()) {
+                    return -1;
+                } else {
+                    return o1.compareTo(o2);
                 }
+            }
             }
 
         public static class PubDateDescComparator implements Comparator<Book> {
