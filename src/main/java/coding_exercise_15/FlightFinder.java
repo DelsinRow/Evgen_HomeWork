@@ -58,6 +58,7 @@ public class FlightFinder {
         for (Flight secondFlight : allConnectingFlights) {
             for(Flight firstFlight : allFlighsList) {
                 if (!secondFlight.getDepartureCity().equals(departureCity) &
+                        firstFlight.getArrivalCity().equals(secondFlight.getDepartureCity()) &
                         firstFlight.getArrivalTime().plusHours(2).isBefore(secondFlight.getDepartureTime())) {
                     connectingflights.add(secondFlight);
                 }
