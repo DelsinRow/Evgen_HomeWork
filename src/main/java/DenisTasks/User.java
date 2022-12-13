@@ -22,7 +22,7 @@ class User {
         User newUser = new User("Anna", "intern");
 
 
-        // Task 1: using Predicate to get interns list.
+        // Task 1: using Predicate to get interns list
         Predicate<User> predicate = user -> user.getRole().equals("intern");
 
         List<User> justInternList = new ArrayList<>();
