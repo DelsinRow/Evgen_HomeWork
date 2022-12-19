@@ -19,7 +19,7 @@ public class Customer {
         customerList.add(this);
     }
 
-   static public Customer getCustomer(String name, List<Customer> customerList) {
+   static public Customer getCustomerToOrder(String name, List<Customer> customerList) {
         Customer chooseCustomer = new Customer();
         for (Customer customer : customerList) {
            if(customer.getName().equals(name)) {
@@ -55,10 +55,6 @@ public class Customer {
 
     @Override
     public String toString() {
-        return "Customer{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", tier=" + tier +
-                '}';
+        return "Customer: " + "id " + id + ", tier " + tier;
     }
 }
