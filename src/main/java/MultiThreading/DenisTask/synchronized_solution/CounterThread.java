@@ -1,4 +1,4 @@
-package MultiThreading.DenisTask;
+package MultiThreading.DenisTask.synchronized_solution;
 
 public class CounterThread extends Thread {
     private int count = 0;

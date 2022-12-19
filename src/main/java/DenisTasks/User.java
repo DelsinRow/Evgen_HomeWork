@@ -7,6 +7,7 @@ import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
+import java.util.stream.Collectors;
 
 class User {
     private String name;
@@ -21,6 +22,13 @@ class User {
 
         User newUser = new User("Anna", "intern");
 
+        List<User> list2 = users.stream()
+                .filter(user -> user.getRole().equals("intern"))
+                .peek(intern -> intern.setRole("new role"))
+                .collect(Collectors.toList());
+
+        System.out.println("OLD LIST: " +users);
+        System.out.println("NEW LIST2: " + list2);
 
         // Task 1: using Predicate to get interns list
         Predicate<User> predicate = user -> user.getRole().equals("intern");

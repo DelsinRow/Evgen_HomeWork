@@ -1,4 +1,4 @@
-package MultiThreading.DenisTask;
+package MultiThreading.DenisTask.synchronized_solution;
 
 public class Main {
     public static void main(String[] args) throws InterruptedException {
