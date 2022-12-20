@@ -1,6 +1,7 @@
 package DenisTasks.streams;
 
 import java.util.List;
+import java.util.Optional;
 
 public class Product {
     private int id;
@@ -11,6 +12,11 @@ public class Product {
     public Product() {
 
     }
+    public Product(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
     public Product(int id, String name, String category, Double price, List<Product> productList) {
 
         this.id = id;
@@ -32,6 +38,10 @@ public class Product {
         return chooseProduct;
     }
 
+    public static Optional<Product> getEmptyProduct(Product product) {
+        return Optional.ofNullable(product);
+    }
+
     public int getId() {
         return id;
     }
@@ -42,6 +52,10 @@ public class Product {
 
     public String getName() {
         return name;
+    }
+
+    public Optional<String> getEmptyName() {
+        return Optional.ofNullable(name);
     }
 
     public void setName(String name) {

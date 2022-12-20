@@ -6,8 +6,9 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 import java.util.Optional;
+
+import static DenisTasks.streams.Product.getEmptyProduct;
 
 
 public class Main {
@@ -36,8 +37,13 @@ public class Main {
                 .filter(product -> product.getCategory().equals("Notebook"))
                 .peek(product -> product.setPrice(product.getPrice() * 0.75)).toList();
 
-        System.out.println(thirdList);
-
+        for(Product product : allProductList()) {
+            for(Product newProduct : thirdList){
+                if (product.getId() == newProduct.getId()) {
+                    System.out.println("Product: " + product.getId() + ",price: " + product.getPrice() + ", new price: " + newProduct.getPrice());
+                }
+            }
+        }
 
         System.out.println("\nПолучите список товаров, заказанных клиентом уровня 3 в период с 01 марта 2022 г. по 30 июня 2022 г.");
         List<Order> orderMarchJune = allOrderList().stream().filter(order ->
@@ -90,12 +96,13 @@ public class Main {
 
         }
 
-        System.out.println("Получите Map'у с идентификатором заказа и количеством продуктов в заказе");
+        System.out.println("\nПолучите Map'у с идентификатором заказа и количеством продуктов в заказе");
         Map<Integer,Integer> idCountMap = new HashMap<>();
         allOrderList().forEach(order -> idCountMap.put(order.getId(), order.getProductsList().size()));
         System.out.println(idCountMap);
 
-        System.out.println("Получите Map'у с заказом и общей суммой товаров");
+
+        System.out.println("\nПолучите Map'у с заказом и общей суммой товаров");
         Map<Order,Double> orderSum = new HashMap<>();
         allOrderList().forEach(order -> {
             double price = 0;
@@ -115,6 +122,11 @@ public class Main {
 
 
         System.out.println("\nДобавить null к какой-нибудь коллекции и использовать Optional");
+        List<Product> newProductList = new ArrayList<>(allProductList());
+        Product emptyProduct = null;
+        newProductList.add(emptyProduct);
+        System.out.println(getEmptyProduct(newProductList.get(10)).orElse(new Product(11,"emptyName")));
+
 
     }
 
